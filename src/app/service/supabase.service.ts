@@ -32,18 +32,7 @@ export class SupabaseService {
   const { data: { user } } = await this.supabase.auth.getUser();
   return user;
 }
-//   getCurrentUserName(){
 
-//     const user = await this.getCurrentUser();
-
-//     if(!user) return null;
-//      return (
-//     user.user_metadata?.['fullName'] ||
-//     user.user_metadata?.fullName ||
-//     user.email?.split('@')[0] ||
-//     'User'
-//   );
-//   }
     async getCurrentUserName(): Promise<string | null> {
       const user = await this.getCurrentUser();
 
@@ -54,5 +43,12 @@ export class SupabaseService {
         user.email?.split('@')[0] ||
         'User'
       );
+    }
+    async getCurrentUserEmail(): Promise<string | null> {
+      const user = await this.getCurrentUser();
+
+      if (!user) return null;
+
+      return user.email || null;
     }
 }

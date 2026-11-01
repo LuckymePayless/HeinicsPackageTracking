@@ -1,12 +1,12 @@
 import { Component,OnInit } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent,IonTabs,IonTabBar,IonTabButton, IonList } from '@ionic/angular';
+import { IonHeader, IonToolbar, IonTitle, IonContent,IonTabs,IonTabBar,IonTabButton, IonList, IonIcon } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { SupabaseService } from '../service/supabase.service';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent,IonTabs,IonTabBar,IonTabButton,IonList],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent,IonTabs,IonTabBar,IonTabButton,IonList,IonIcon],
 })
 
 export class HomePage implements OnInit{

@@ -2,13 +2,29 @@
   <div class="profileNameContainer">
     <h4 class="greetings">{{usernamePlaceholder}}</h4>
   </div>
-
+  <div class="deliveryStatusBarContainer">
+    <div class="activeDelivery deliveryStatusBar"></div>
+    <div class="pendingDelivery deliveryStatusBar"></div>
+    <div class="completedDelivery deliveryStatusBar"></div>
+  </div>
 </ion-content>
 <ion-tabs>
-  <ion-tab-bar>
-    <ion-tab-button>Home</ion-tab-button>
-    <ion-tab-button>Package</ion-tab-button>
-    <ion-tab-button>Notif</ion-tab-button>
-    <ion-tab-button (click)="goToProfile()">Profile</ion-tab-button>
+  <ion-tab-bar class="navContainer">
+    <ion-tab-button>
+      <ion-icon src="assets/icon/Navigation/home.svg"></ion-icon>
+      Home
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon src="assets/icon/Navigation/orders.svg"></ion-icon>
+      Package
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon src="assets/icon/Navigation/notif.svg"></ion-icon>
+      Notification
+    </ion-tab-button>
+    <ion-tab-button (click)="goToProfile()">
+      <ion-icon src="assets/icon/Navigation/profile.svg"> </ion-icon>
+      Profile
+    </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>

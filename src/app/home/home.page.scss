@@ -7,3 +7,31 @@
     font-family: 'Times New Roman', Times, serif;
   }
 }
+.deliveryStatusBarContainer{
+  display:flex;
+  justify-content:space-between;
+  width: 90%;
+  margin: 0 auto;
+  padding-top:10px;
+  
+  .deliveryStatusBar{
+    width: 30%;
+    height: 25vh;
+    border-radius: 10px;
+  }
+  .activeDelivery{
+    background-color: #0D6EFD;
+  }
+  .pendingDelivery{
+    background-color: #FFC107;
+  }
+  .completedDelivery{
+    background-color: #28a745;
+  }
+}
+.navContainer{
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  padding-bottom:10px;
+  box-shadow: 0px -2px 5px 0px rgba(63, 63, 63, 0.414);
+}

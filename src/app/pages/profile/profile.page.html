@@ -1,18 +1,36 @@
 <ion-content>
   <div class="profileContainer">
-
+    <img src="assets/icon/Backward Cap Anime Avatar.png" alt="error"
+      class="profileImage">
+    <h5 style="font-weight: bold;">{{ userNamePlaceholder }}</h5>
+    <h5>{{ emailPlaceholde }}</h5>
   </div>
   <div class="settingContainer">
-    <ion-button expand="block" color="danger" (click)="logOut()">Log
+
+  </div>
+  <br><br>
+  <div class="logOutBtnContainer">
+    <ion-button shape="round" (click)="logOut()" class="logoutBtn">Log
       Out</ion-button>
   </div>
 </ion-content>
 <ion-tabs>
-  <ion-tab-bar>
-    <ion-tab-button (click)="goToHome()">Home</ion-tab-button>
-    <ion-tab-button>Package</ion-tab-button>
-    <ion-tab-button>Notif</ion-tab-button>
-    <ion-tab-button
-      style="color: blue;">Profile</ion-tab-button>
+  <ion-tab-bar class="navContainer">
+    <ion-tab-button (click)="goToHome()">
+      <ion-icon src="assets/icon/Navigation/home.svg"></ion-icon>
+      Home
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon src="assets/icon/Navigation/orders.svg"></ion-icon>
+      Package
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon src="assets/icon/Navigation/notif.svg"></ion-icon>
+      Notification
+    </ion-tab-button>
+    <ion-tab-button (click)="goToProfile()">
+      <ion-icon src="assets/icon/Navigation/profile.svg"> </ion-icon>
+      Profile
+    </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>
