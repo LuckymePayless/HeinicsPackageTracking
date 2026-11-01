@@ -1,0 +1,84 @@
+<ion-content>
+  <div class="logoContainer">
+    <img src="assets/HeinicsLogo.png" alt="Heinics Logo" class="logo">
+  </div>
+
+  <form #f="ngForm" (ngSubmit)="register()" class="authenticationContainer">
+    <h1>Create account</h1>
+    <p>Join now and get started today</p>
+
+    <div class="signUpCommtainer">
+
+      <!-- ✅ FIXED: Added name & ngModel -->
+      <ion-input
+        class="inputField"
+        label="Full Name"
+        label-placement="floating"
+        fill="outline"
+        type="text"
+        name="fullName"
+        required
+        [(ngModel)]="fullName"></ion-input>
+      <br>
+
+      <ion-input
+        class="inputField"
+        label="✉ Email"
+        labelPlacement="floating"
+        fill="outline"
+        type="email"
+        name="email"
+        autocomplete="email"
+        required
+        email
+        [(ngModel)]="email"></ion-input>
+      <br>
+
+      <ion-input
+        class="inputField"
+        label="🔒 Password (min 6 characters)"
+        labelPlacement="floating"
+        fill="outline"
+        type="password"
+        name="password"
+        autocomplete="new-password"
+        required
+        minlength="6"
+        [(ngModel)]="password"></ion-input>
+      <br>
+
+      <ion-input
+        class="inputField"
+        label="🔒 Confirm password"
+        labelPlacement="floating"
+        fill="outline"
+        type="password"
+        name="confirm"
+        autocomplete="new-password"
+        required
+        [(ngModel)]="confirm"></ion-input>
+    </div>
+    <br>
+
+    @if (errorMsg) {
+    <p><ion-text color="danger">{{ errorMsg }}</ion-text></p>
+    }
+    @if (infoMsg) {
+    <p><ion-text color="success">{{ infoMsg }}</ion-text></p>
+    }
+
+    <ion-button expand="block" type="submit" [disabled]="f.invalid || loading">
+      {{ loading ? 'Creating account...' : 'Create account' }}
+    </ion-button>
+
+    <ion-checkbox label-placement="end" name="agreeTerms" required
+      [(ngModel)]="agreeTerms">
+      I agree to terms of service and privacy policy
+    </ion-checkbox>
+
+    <p class="ion-text-center">
+      Already have an account? <a routerLink="/login"
+        style="cursor: pointer;">Login</a>
+    </p>
+  </form>
+</ion-content>

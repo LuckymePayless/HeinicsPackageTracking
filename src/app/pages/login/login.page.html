@@ -1,0 +1,62 @@
+<ion-content>
+
+  <div class="logoContainer">
+    <img src="/assets/HeinicsLogo.png" alt="error" class="logo">
+  </div>
+
+  <form #f="ngForm" (ngSubmit)="login()" class="authenticationContainer">
+    <h1>Wellcome Back</h1>
+    <p>Signin to continue to your account</p>
+    <ion-input
+      label="Email"
+      labelPlacement="floating"
+      fill="outline"
+      type="email"
+      name="email"
+      autocomplete="email"
+      required
+      email
+      [(ngModel)]="email"></ion-input>
+
+    <br />
+
+    <ion-input
+      label="Password"
+      labelPlacement="floating"
+      fill="outline"
+      type="password"
+      name="password"
+      autocomplete="current-password"
+      required
+      [(ngModel)]="password"></ion-input>
+
+    <br>
+
+    @if (errorMsg) {
+    <p><ion-text color="danger">{{ errorMsg }}</ion-text></p>
+    }
+    @if (infoMsg) {
+    <p><ion-text color="success">{{ infoMsg }}</ion-text></p>
+    }
+
+    <ion-button expand="block" type="submit" [disabled]="f.invalid || loading">
+      {{ loading ? 'Logging in...' : 'Login' }}
+    </ion-button>
+    <ion-button expand="block" fill="clear" (click)="forgotPassword()"
+      [disabled]="loading">
+      Forgot password?
+    </ion-button>
+  </form>
+
+  @if (needsConfirm) {
+  <ion-button expand="block" fill="outline" (click)="resend()"
+    [disabled]="loading">
+    Resend confirmation email
+  </ion-button>
+  }
+
+  <p class="ion-text-center">
+    No account yet? <a routerLink="/signup"
+      style="cursor: pointer;">Register</a>
+  </p>
+</ion-content>

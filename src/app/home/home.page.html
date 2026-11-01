@@ -1,0 +1,14 @@
+<ion-content>
+  <div class="profileNameContainer">
+    <h4 class="greetings">{{usernamePlaceholder}}</h4>
+  </div>
+
+</ion-content>
+<ion-tabs>
+  <ion-tab-bar>
+    <ion-tab-button>Home</ion-tab-button>
+    <ion-tab-button>Package</ion-tab-button>
+    <ion-tab-button>Notif</ion-tab-button>
+    <ion-tab-button (click)="goToProfile()">Profile</ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
