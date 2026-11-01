@@ -1,7 +1,7 @@
 import { Component,OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar ,IonTabs,IonTabBar,IonTabButton, IonButton} from '@ionic/angular';
+import { IonContent, IonHeader, IonTitle, IonToolbar ,IonTabs,IonTabBar,IonTabButton, IonButton,IonIcon} from '@ionic/angular';
 import { Router } from '@angular/router';
 import { SupabaseService } from '../../service/supabase.service';
 
@@ -9,7 +9,7 @@ import { SupabaseService } from '../../service/supabase.service';
   selector: 'app-profile',
   templateUrl: './profile.page.html',
   styleUrls: ['./profile.page.scss'],
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule,IonTabs,IonTabBar,IonTabButton,IonButton],
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule,IonTabs,IonTabBar,IonTabButton,IonButton,IonIcon],
 })
 export class ProfilePage implements OnInit {
 
